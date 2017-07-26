@@ -1,9 +1,8 @@
-FROM ubuntu-debootstrap:latest
+FROM alpine:latest
 
 MAINTAINER knepti <knepti@gmail.com>
 
-RUN apt-get update && \
-    apt-get install -y unbound
+RUN apk add --no-cache unbound
 
 ADD local.conf /etc/unbound/unbound.conf
 
